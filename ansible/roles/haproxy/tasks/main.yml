@@ -1,0 +1,15 @@
+---
+# tasks file for haproxy
+
+-name: updating the packates
+ yum: name="*" state=latest
+
+-name: installing the dependency packages for haproxy
+ yum: name={{ item }} state=latest
+ with_items:
+   - gcc
+   - pcre-static
+   - pcre-devel
+
+- name: installing haproxy package
+  yum: name=haproxy state=latest
