@@ -1,0 +1,13 @@
+---
+
+- name: configure and deploy the webservers and application code
+  hosts: nginx
+  remote_user: ec2-user
+  roles:
+    - nginx
+
+- name: configure and deploy the webservers and application code
+  hosts: haproxy
+  remote_user: ec2-user
+  roles:
+    - haproxy 
